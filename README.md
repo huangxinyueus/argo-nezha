@@ -91,6 +91,9 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
     
     v0 的路径是 /oauth，而 v1/v2 新版必须改成 /oauth2/callback。如果没改，GitHub 登录时会报错。
 
+      v0:https://xx.xx.com/oauth
+
+    v1v2:https://xx.xx.com//oauth2/callback
   所以切换注意下面1和2加GitHub 申请 GH_CLIENTID 路径改动
 
     
