@@ -89,17 +89,20 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
 
 
     
-| 序号 | Key（变量名） | Value（填写规范与示例） | 作用说明 |
-| :---: | :--- | :--- | :--- |
-| **1** | `DASHBOARD_VERSION` | `v0.17.9` | **版本控制**：锁定 v0 经典版面板。 |
-| **2** | `REVERSE_PROXY_MODE` | `nginx` | **反代控制**：锁定使用 Nginx 转发。 |
-| **3** | `ARGO_DOMAIN` | `://yourdomain.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
-| **4** | `ARGO_AUTH` | `eyJhIjoi...（隧道Token）` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
+
+| 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
+| :--- | :--- | :--- | :--- |
+| **1** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
+| **2** | `REVERSE_PROXY_MODE` | `caddy` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 或 grpcwebproxy 转发单端口。 |
+| **3** | `ARGO_DOMAIN` | `你的新版域名.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
+| **4** | `ARGO_AUTH` | `eyJhIjoi...` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
 | **5** | `GH_USER` | `你的GitHub用户名` | **后台登录**：绑定为主管理员的 GitHub 账号名。 |
 | **6** | `GH_CLIENTID` | `Iv1.xxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client ID。 |
-| **7** | `GH_CLIENTSECRET` | `xxxxxxxxxxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client Secret 密钥。 |
-| **8** | `GH_PAT` | `ghp_xxxxxxxxxxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
-| **9** | `GH_REPO` | `你的用户名/仓库名` | **自动备份**：专门用来存放备份文件的 GitHub 私有仓库。 |
+| **7** | `GH_CLIENTSECRET` | `xxxxxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client Secret 密钥。 |
+| **8** | `GH_PAT` | `ghp_xxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
+| **9** | `GH_REPO` | `用户名/新仓库名` | **自动备份**：专门用来存放备份文件的 **GitHub 私有仓库**。 |
+| **10** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
+
 
 
  
