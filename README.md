@@ -100,20 +100,20 @@ docker镜像： `hxyus/argx-nezha`， `mikehand888/argo-nezha:latest`支持 amd6
     v0部署几个变量：
 
   
-| 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
-| :--- | :--- | :--- | :--- |
-| **1** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
-| **2** | `REVERSE_PROXY_MODE` | `nginx` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 默认使用 Caddy 应用来反代，可以不填。v0可选 Nginx 或 gRPCwebProxy；v1必须用 Caddy。 |
-| **3** | `ARGO_DOMAIN` | `你的新版域名.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
-| **4** | `ARGO_AUTH` | `eyJhIjoi...` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
-| **5** | `GH_USER` | `你的GitHub用户名` | **后台登录**：绑定为主管理员的 GitHub 账号名。 |
-| **6** | `GH_CLIENTID` | `Iv1.xxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client ID。 |
-| **7** | `GH_CLIENTSECRET` | `xxxxxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client Secret 密钥。 |
-| **8** | `GH_PAT` | `ghp_xxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
-| **9** | `GH_REPO` | `用户名/新仓库名` | **自动备份**：专门用来存放备份文件的 **GitHub 私有仓库**。 |
-| **10** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
-| **11** | `BACKUP_TIME` | `0 4 * * *` | **备份时间**：自定义备份时间（Cron表达式），不填默认为每天北京时间 4 点备份。 |
-| **12** | `BACKUP_NUM` | `5` | **备份数量**：自定义备份仓库中的备份总数，不填默认为 5，即仓库里只保留最近的 5 个备份。 |
+|| 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
+| :---: | :--- | :--- | :--- |
+| **1** | `GH_USER` | `你的GitHub用户名` | **后台登录**：绑定为主管理员的 GitHub 账号名。 |
+| **2** |  `GH_EMAIL` | `你的GitHub邮箱` | **后台登录**：绑定为主管理员的 GitHub 邮箱。 |                                                                                                                                                
+| **3** | `GH_CLIENTID` | `Iv1.xxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client ID。 |
+| **4** | `GH_CLIENTSECRET` | `xxxxxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client Secret 密钥。 |
+| **5** | `GH_PAT` | `ghp_xxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
+| **6** | `GH_REPO` | `用户名/新仓库名` | **自动备份**：专门用来存放备份文件的 **GitHub 私有仓库**。 |
+| **7** | `ARGO_DOMAIN` | `你的新版域名.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
+| **8** | `ARGO_AUTH` | `eyJhIjoi...` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
+| **9** | `BACKUP_TIME` | `0 4 * * *` | **备份时间**：自定义备份时间（Cron表达式），不填默认为每天北京时间 4 点备份。 |
+| **10** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
+| **11** | `REVERSE_PROXY_MODE` | `nginx` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 应用来反代，可以不填。v0可选 Nginx 或 gRPCwebProxy；v1必须用 Caddy。 |
+| **12** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
 
 
 
