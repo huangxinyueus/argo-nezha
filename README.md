@@ -44,7 +44,7 @@
   - 获得 `github` 的 `OAuth 2.0` 认证和 `PAT` ，[点击前往教程](https://github.com/Kiritocyz/Argo-Nezha-Service-Container/blob/main/README.md#%E5%87%86%E5%A4%87%E9%9C%80%E8%A6%81%E7%94%A8%E7%9A%84%E5%8F%98%E9%87%8F)，注意 `v0` 和 `v1` 的 `OAuth 2.0` 认证是不同的，[点击前往了解区别](https://github.com/Kiritocyz/Argo-Nezha-Service-Container#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E5%9D%91%E7%82%B9)。
 ## docker镜像及其环境变量说明
 
-docker镜像：`mikehand888/argo-nezha:latest` ， 支持 amd64 和 arm64 架构。
+docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支持 amd64 和 arm64 架构。
 
 [容器平台上部署教程，点击前往](https://github.com/Kiritocyz/Argo-Nezha-Service-Container/blob/main/README.md#paas-%E9%83%A8%E7%BD%B2%E5%AE%9E%E4%BE%8B)
 
@@ -72,6 +72,18 @@ docker镜像：`mikehand888/argo-nezha:latest` ， 支持 amd64 和 arm64 架构
   | BACKUP_TIME         | 否 | 自定义备份时间，不填默认为 `0 4 * * *`，即每天北京时间 `4` 点备份 |
   | BACKUP_NUM          | 否 | 自定义备份仓库中的备份总数，不填默认为 `5` ，即仓库里只保留5个备份 |
 
+
+  注意：1.想要切换到 v0（旧版面板 + Nginx）时：
+      在 Koyeb 的环境变量（Environment Variables）表格里，添加这两个变量的值：
+       
+       DASHBOARD_VERSION ➡️ 填 v0.17.9 (或者 v0.20.13)
+       REVERSE_PROXY_MODE ➡️ 填 nginx
+       
+       想要切换到 v1（新版面板 + Caddy）时：
+
+        2.在 Koyeb 的环境变量表格里，把上面这两行直接删掉或者保持空白 [^auth]。
+        不管你怎么切，你随时在 Koyeb 网页上点几下修改，服务就能在 30 秒内自动帮你重新部署切换好，
+    
 ## 在VPS上使用脚本部署
 
 ```
