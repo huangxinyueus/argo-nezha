@@ -44,7 +44,7 @@
   - 获得 `github` 的 `OAuth 2.0` 认证和 `PAT` ，[点击前往教程](https://github.com/Kiritocyz/Argo-Nezha-Service-Container/blob/main/README.md#%E5%87%86%E5%A4%87%E9%9C%80%E8%A6%81%E7%94%A8%E7%9A%84%E5%8F%98%E9%87%8F)，注意 `v0` 和 `v1` 的 `OAuth 2.0` 认证是不同的，[点击前往了解区别](https://github.com/Kiritocyz/Argo-Nezha-Service-Container#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E5%9D%91%E7%82%B9)。
 ## docker镜像及其环境变量说明
 
-docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支持 amd64 和 arm64 架构。
+docker镜像： `hxyus/argx-nezha`， `mikehand888/argo-nezha:latest`支持 amd64 和 arm64 架构。
 
 [容器平台上部署教程，点击前往](https://github.com/Kiritocyz/Argo-Nezha-Service-Container/blob/main/README.md#paas-%E9%83%A8%E7%BD%B2%E5%AE%9E%E4%BE%8B)
 
