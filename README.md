@@ -103,7 +103,7 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
 | :--- | :--- | :--- | :--- |
 | **1** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
-| **2** | `REVERSE_PROXY_MODE` | `caddy` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 或 grpcwebproxy 转发单端口。 |
+| **2** | `REVERSE_PROXY_MODE` | `nginx` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 或 grpcwebproxy 转发单端口。 |
 | **3** | `ARGO_DOMAIN` | `你的新版域名.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
 | **4** | `ARGO_AUTH` | `eyJhIjoi...` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
 | **5** | `GH_USER` | `你的GitHub用户名` | **后台登录**：绑定为主管理员的 GitHub 账号名。 |
