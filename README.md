@@ -77,12 +77,30 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
       在 Koyeb 的环境变量（Environment Variables）表格里，添加这两个变量的值：
        
        DASHBOARD_VERSION ➡️ 填 v0.17.9 (或者 v0.20.13)
+       
        REVERSE_PROXY_MODE ➡️ 填 nginx
        
        想要切换到 v1（新版面板 + Caddy）时：
 
         2.在 Koyeb 的环境变量表格里，把上面这两行直接删掉或者保持空白 [^auth]。
         不管你怎么切，你随时在 Koyeb 网页上点几下修改，服务就能在 30 秒内自动帮你重新部署切换好，
+
+    v0部署几个变量：
+
+     | 变量名        | 是否必须  | 备注 |
+  | ------------ | ------   | ---- |
+  | GH_USER             | 是 | github 的用户名，用于面板管理授权 |
+  | GH_CLIENTID         | 是 | 在 github 上申请 |
+  | GH_CLIENTSECRET     | 是 | 在 github 上申请 |
+  | GH_BACKUP_USER      | 否 | 在 github 上备份哪吒服务端数据库的 github 用户名，不填则与面板管理授权的账户 GH_USER 一 致  |
+  | GH_REPO             | 否 | 在 github 上备份哪吒服务端数据库文件的 github 库 |
+  | GH_EMAIL            | 是| github 的邮箱，用于备份的 git 推送到远程库|
+  | GH_PAT              | 否| github 的 PAT |
+  | ARGO_AUTH           | 是| Json: 从 https://fscarmen.cloudflare.now.cc 获取的 Argo Json|Token: 从 Cloudflare 官网获取
+  | ARGO_DOMAIN         | 是| Argo 域名 | 
+  | DASHBOARD_VERSION   | 是|指定面板的版本| 指定面板的版本，以 v0.00.00 的格式，后续将固定在该版本不会升级，不填则使用默认的  
+                             v0.20.13
+                             
     
 ## 在VPS上使用脚本部署
 
