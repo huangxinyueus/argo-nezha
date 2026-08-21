@@ -76,20 +76,27 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
   注意：1.想要切换到 v0（旧版面板 + Nginx）时：
       在 Koyeb 的环境变量（Environment Variables）表格里，添加这两个变量的值：
        
-       DASHBOARD_VERSION ➡️ 填 v0.17.9 (或者 v0.20.13)
+      1 DASHBOARD_VERSION ➡️ 填 v0.17.9 (或者 v0.20.13)
        
-       REVERSE_PROXY_MODE ➡️ 填 nginx
+      2 REVERSE_PROXY_MODE ➡️ 填 nginx
        
        想要切换到 v1（新版面板 + Caddy）时：
 
-        2.在 Koyeb 的环境变量表格里，把上面这两行直接删掉或者保持空白 [^auth]。
+        3.在 Koyeb 的环境变量表格里，把上面这两行直接删掉或者保持空白 [^auth]。
         不管你怎么切，你随时在 Koyeb 网页上点几下修改，服务就能在 30 秒内自动帮你重新部署切换好，
 
-    v0部署几个变量：
+    要是切换v0和v1v2话也要改： 
+    
+    v0 到 v1/v2 的关键区别：你在 GitHub 申请 GH_CLIENTID 时，填写的 Authorization callback URL，
+    
+    v0 的路径是 /oauth，而 v1/v2 新版必须改成 /oauth2/callback。如果没改，GitHub 登录时会报错。
 
+  所以切换注意下面1和2加GitHub 申请 GH_CLIENTID 路径改动
 
     
+    v0部署几个变量：
 
+  
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
 | :--- | :--- | :--- | :--- |
 | **1** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
@@ -102,6 +109,9 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
 | **8** | `GH_PAT` | `ghp_xxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
 | **9** | `GH_REPO` | `用户名/新仓库名` | **自动备份**：专门用来存放备份文件的 **GitHub 私有仓库**。 |
 | **10** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
+| **11** | `BACKUP_TIME` | `0 4 * * *` | **备份时间**：自定义备份时间（Cron表达式），不填默认为每天北京时间 4 点备份。 |
+| **12** | `BACKUP_NUM` | `5` | **备份数量**：自定义备份仓库中的备份总数，不填默认为 5，即仓库里只保留最近的 5 个备份。 |
+
 
 
 
