@@ -87,6 +87,21 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
 
     v0部署几个变量：
 
+
+    
+| 序号 | Key（变量名） | Value（填写规范与示例） | 作用说明 |
+| :---: | :--- | :--- | :--- |
+| **1** | `DASHBOARD_VERSION` | `v0.17.9` | **版本控制**：锁定 v0 经典版面板。 |
+| **2** | `REVERSE_PROXY_MODE` | `nginx` | **反代控制**：锁定使用 Nginx 转发。 |
+| **3** | `ARGO_DOMAIN` | `://yourdomain.com` | **网络穿透**：Cloudflare 隧道绑定的独立域名。 |
+| **4** | `ARGO_AUTH` | `eyJhIjoi...（隧道Token）` | **网络穿透**：Cloudflare 隧道的 Token 字符串。 |
+| **5** | `GH_USER` | `你的GitHub用户名` | **后台登录**：绑定为主管理员的 GitHub 账号名。 |
+| **6** | `GH_CLIENTID` | `Iv1.xxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client ID。 |
+| **7** | `GH_CLIENTSECRET` | `xxxxxxxxxxxxxxxxxxxx` | **后台登录**：GitHub OAuth 应用的 Client Secret 密钥。 |
+| **8** | `GH_PAT` | `ghp_xxxxxxxxxxxxxxxxxxxx` | **自动备份**：你的 GitHub 个人访问令牌（用于往私库上传备份）。 |
+| **9** | `GH_REPO` | `你的用户名/仓库名` | **自动备份**：专门用来存放备份文件的 GitHub 私有仓库。 |
+
+
  
 
                              
