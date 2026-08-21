@@ -87,19 +87,18 @@ docker镜像： `hxyus/argo-nezha:latest`， `mikehand888/argo-nezha:latest`支�
 
     v0部署几个变量：
 
-     | 变量名        | 是否必须  | 备注 |
-  | ------------ | ------   | ---- |
-  | GH_USER             | 是 | github 的用户名，用于面板管理授权 |
-  | GH_CLIENTID         | 是 | 在 github 上申请 |
-  | GH_CLIENTSECRET     | 是 | 在 github 上申请 |
-  | GH_BACKUP_USER      | 否 | 在 github 上备份哪吒服务端数据库的 github 用户名，不填则与面板管理授权的账户 GH_USER 一 致  |
-  | GH_REPO             | 否 | 在 github 上备份哪吒服务端数据库文件的 github 库 |
-  | GH_EMAIL            | 是| github 的邮箱，用于备份的 git 推送到远程库|
-  | GH_PAT              | 否| github 的 PAT |
-  | ARGO_AUTH           | 是| Json: 从 https://fscarmen.cloudflare.now.cc 获取的 Argo Json|Token: 从 Cloudflare 官网获取
-  | ARGO_DOMAIN         | 是| Argo 域名 | 
-  | DASHBOARD_VERSION   | 是|指定面板的版本| 指定面板的版本，以 v0.00.00 的格式，后续将固定在该版本不会升级，不填则使用默认的  
-                             v0.20.13
+  序号	Key（变量名）	Value（填写规范与示例）	作用说明
+1	DASHBOARD_VERSION	v0.17.9	版本控制：锁定 v0 经典版面板。
+2	REVERSE_PROXY_MODE	nginx	反代控制：锁定使用 Nginx 转发。
+3	ARGO_DOMAIN	://yourdomain.com	网络穿透：Cloudflare 隧道绑定的独立域名。
+4	ARGO_AUTH	eyJhIjoi...（隧道Token）	网络穿透：Cloudflare 隧道的 Token 字符串。
+5	GH_USER	你的GitHub用户名	后台登录：绑定为主管理员的 GitHub 账号名。
+6	GH_CLIENTID	Iv1.xxxxxxxxxxxx	后台登录：GitHub OAuth 应用的 Client ID [^auth]。
+7	GH_CLIENTSECRET	xxxxxxxxxxxxxxxxxxxx	后台登录：GitHub OAuth 应用的 Client Secret 密钥 [^auth]。
+8	GH_PAT	ghp_xxxxxxxxxxxxxxxxxxxx	自动备份：你的 GitHub 个人访问令牌（用于往私库上传备份）。
+9	GH_REPO	你的用户名/仓库名	自动备份：专门用来存放备份文件的 GitHub 私有仓库（例如 hxyus/nezha-backup）。
+<img width="850" height="550" alt="image" src="https://github.com/user-attachments/assets/940fb5b2-38d9-4522-bb17-e9a6d7429a6f" />
+
                              
     
 ## 在VPS上使用脚本部署
