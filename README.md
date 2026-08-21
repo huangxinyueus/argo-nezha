@@ -94,7 +94,7 @@ docker镜像： `hxyus/argx-nezha`， `mikehand888/argo-nezha:latest`支持 amd6
       v0:https://xx.xx.com/oauth
 
     v1v2:https://xx.xx.com//oauth2/callback
-  所以切换注意下面1和2加GitHub 申请 GH_CLIENTID 路径改动
+  所以切换注意下面10和11加更改和12开关更新 申请 v0和v1v2直接路径改动 
 
     
     v0部署几个变量：
