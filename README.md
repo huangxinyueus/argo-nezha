@@ -130,20 +130,18 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
  V0v1版：  docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `fscarmen/argo-nezha:latest`支持 amd64 和 arm64 架构。
  
      用到的变量
-  | 变量名        | 是否必须  | 备注 |
-  | ------------ | ------   | ---- |
-  | GH_USER             | 是 | github 的用户名，用于面板管理授权 |
-  | GH_CLIENTID         | 是 | 在 github 上申请 |
-  | GH_CLIENTSECRET     | 是 | 在 github 上申请 |
-  | GH_BACKUP_USER      | 否 | 在 github 上备份哪吒服务端数据库的 github 用户名，不填则与面板管理授权的账户 GH_USER 一致  |
-  | GH_REPO             | 否 | 在 github 上备份哪吒服务端数据库文件的 github 库 |
-  | GH_EMAIL            | 否 | github 的邮箱，用于备份的 git 推送到远程库 |
-  | GH_PAT              | 否 | github 的 PAT |
-  | REVERSE_PROXY_MODE  | 否 | 默认使用 Caddy 应用来反代，这时可以不填写该变量；如需 Nginx 或 gRPCwebProxy 反代，请设置该值为 `nginx ` 或 `grpcwebproxy` |
-  | ARGO_AUTH           | 是 | Json: 从 https://fscarmen.cloudflare.now.cc 获取的 Argo Json<br> Token: 从 Cloudflare 官网获取 |
-  | ARGO_DOMAIN         | 是 | Argo 域名 |
-  | NO_AUTO_RENEW       | 否 | 默认不需要该变量，即每天定时同步在线最新的备份和还原脚本。如不需要该功能，设置此变量，并赋值为 `1` |
-  | DASHBOARD_VERSION   | 否 | 指定面板的版本，以 `v0.00.00` 的格式，后续将固定在该版本不会升级，不填则使用默认的 `v0.20.13` |                        
+| 序号 | 变量名称 (Key) | 如果要部署 v0 (老版本) | 如果要部署 v1 (新版本) | 作用解释 |
+| :--- | :--- | :--- | :--- |
+| **1** | **`NZ_VERSION`** | `v0` *(或不填)* | `v1` | **核心控制开关：告诉容器去拉哪个版本的面板** |
+| **2** | **`GH_CLIENTID`** | **必须填写** *(GitHub 申请的 ID)* | *可完全不填 / 删掉* | v0 的唯一登录认证方式 |
+| **3** | **`GH_CLIENTSECRET`** | **必须填写** *(GitHub 申请的密钥)* | *可完全不填 / 删掉* | v0 的唯一登录认证方式 |
+| **4** | **`NZ_USER`** | *可完全不填 / 删掉* | **必须填写** *(如 `admin`)* | **v1 自定义管理员账号** |
+| **5** | **`NZ_PASSWORD`** | *可完全不填 / 删掉* | **必须填写** *(如 `password123`)* | **v1 自定义管理员密码** |
+| **6** | **`GH_USER`** | 必须填写 *(你的 GitHub 账号)* | 必须填写 *(只用于数据自动备份)* | 告诉系统谁在操作备份 |
+| **7** | **`GH_PAT`** | 必须填写 *(你的 GitHub Token)* | 必须填写 *(只用于数据自动备份)* | 备份时推送到你私库的钥匙 |
+| **8** | **`GH_REPO`** | 必须填写 *(你的私库名字)* | 必须填写 *(只用于数据自动备份)* | 存放你备份数据的仓库 |
+| **9** | **`ARGO_AUTH`** | 必须填写 *(你的 cf 穿透凭证)* | 必须填写 *(你的 cf 穿透凭证)* | 穿透回源的凭证 |
+| **10** | **`ARGO_DOMAIN`** | 必须填写 *(你的访问域名)* | 必须填写 *(你的访问域名)* | 面板暴露的公网自定义域名 |                       
     
 ## 在VPS上使用脚本部署
 
