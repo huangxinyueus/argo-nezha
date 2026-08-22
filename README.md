@@ -118,12 +118,9 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 
 
   或者在加一个变量授权github才能登入
+| 序号 | 变量名 (Key) |
 
-  | **12** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS）` |`你的GitHub用户名或者id` |
-
-
-
-
+| **13** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` |
 
  
 
