@@ -117,6 +117,11 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 | **12** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
 
 
+  或者在加一个变量授权github才能登入
+
+  | **12** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS）` |`你的GitHub用户名或者id` |
+
+
 
 
 
