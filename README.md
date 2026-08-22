@@ -127,7 +127,7 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 | :-: | :--- | :--- | :--- |
 | **14** | `NEZHA_GITHUB_ADMINS` 或 `NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` | **后台登录**：绑定为主管理员的 GitHub 账号或 ID。 |
 
- V0v1版：  docker镜像：v1vo镜像 `hxyus/nezha-argov0v1`， `fscarmen/argo-nezha:latest`支持 amd64 和 arm64 架构。
+ V0：  docker镜像：v1vo镜像 `hxyus/nezha-argov0:v0`，支持 amd64 和 arm64 架构。
  
      用到的变量
 ### 📊 v0写定格版
