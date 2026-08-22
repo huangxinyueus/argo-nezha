@@ -122,7 +122,7 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
 | :-: | :--- | :--- | :--- |
-| **15** | `NEZHA_GITHUB_ADMINS` 或 `NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` | **后台登录**：绑定为主管理员的 GitHub 账号或 ID。 |
+| **14** | `NEZHA_GITHUB_ADMINS` 或 `NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` | **后台登录**：绑定为主管理员的 GitHub 账号或 ID。 |
 
  
 
