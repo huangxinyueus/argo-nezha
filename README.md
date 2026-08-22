@@ -115,15 +115,14 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 | **10** | `DASHBOARD_VERSION` | `v1.1.1` (或填 `v2.x.y`) | **版本控制**：明确锁定部署新版（v1/v2系列）面板。 |
 | **11** | `REVERSE_PROXY_MODE` | `nginx` (或保持默认) | **反代控制**：新版推荐用默认的 Caddy 应用来反代，可以不填。v0可选 Nginx 或 gRPCwebProxy；v1必须用 Caddy。 |
 | **12** | `NO_AUTO_RENEW` | `1` | **更新控制**：1表示静止更新到哪吒最新版本，0表示打开更新哪吒最新版。1代表 True（开启 / 是 / 触发），0代表 False（关闭 / 否 / 不触发）。 |
-
+| **13** | `uuid` | `6529b007-521e-4340-8903-87c8344bcfcb` | **自动生成argo节点**：可以在容器的日志说明找到节点订阅链接如：xx.xxx.com/6529b007-521e-4340-8903-87c8344bcfcb |
 
   或者在加一个变量授权github才能登入
 
 
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
-| **13** | `uuid` | `6529b007-521e-4340-8903-87c8344bcfcb` |
-| **14** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` |
-| **1** | `uuid` | `6529b007-521e-4340-8903-87c8344bcfcb` | **自动生成argo节点**：可以在容器的日志说明找到节点订阅链接如：xx.xxx.com/6529b007-521e-4340-8903-87c8344bcfcb |
+| :-: | :--- | :--- | :--- |
+| **15** | `NEZHA_GITHUB_ADMINS` 或 `NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` | **后台登录**：绑定为主管理员的 GitHub 账号或 ID。 |
 
  
 
