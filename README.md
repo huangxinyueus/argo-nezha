@@ -91,9 +91,10 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
     
     v0 的路径是 /oauth，而 v1/v2 新版必须改成 /oauth2/callback。如果没改，GitHub 登录时会报错。
 
-      v0:https://xx.xx.com/oauth
-
-    v1v2:https://xx.xx.com//oauth2/callback
+      v0： https://你的面板域名/oauth2/callback
+      
+      v1：https://你的面板域名/api/v1/oauth2/callback
+  
   所以切换注意下面10和11加更改和12开关更新 申请 v0和v1v2直接路径改动 
 
     
