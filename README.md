@@ -121,8 +121,9 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 
 
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
-
-| **13** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` |
+| **13** | `uuid` | `6529b007-521e-4340-8903-87c8344bcfcb` |
+| **14** | `NEZHA_GITHUB_ADMINS 或 NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` |
+| **1** | `uuid` | `6529b007-521e-4340-8903-87c8344bcfcb` | **自动生成argo节点**：可以在容器的日志说明找到节点订阅链接如：xx.xxx.com/6529b007-521e-4340-8903-87c8344bcfcb |
 
  
 
