@@ -97,8 +97,11 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
   
   所以切换注意下面10和11加更改和12开关更新 申请 v0和v1v2直接路径改动 
 
-    
-    v0部署几个变量：
+ 下面这个是v1v2版本哪吒兼容v0,但目前改变量会报错，不用改就按它配置来
+  
+  V1V2版：  
+  
+  v0部署几个变量：
 
   
 | 序号 | 变量名 (Key) | 示例值 (Value) | 作用与说明 |
@@ -125,7 +128,7 @@ docker镜像：v1vo镜像 `hxyus/nezha-argov1vo:latest`， `mikehand888/argo-nez
 | **14** | `NEZHA_GITHUB_ADMINS` 或 `NZ_GITHUB_ADMINS` | `你的GitHub用户名或者id` | **后台登录**：绑定为主管理员的 GitHub 账号或 ID。 |
 
  
-
+ V0版：
                              
     
 ## 在VPS上使用脚本部署
